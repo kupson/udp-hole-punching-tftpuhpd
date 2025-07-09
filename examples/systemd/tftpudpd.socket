@@ -1,0 +1,10 @@
+[Unit]
+Description=TFTP UDP hole puncher socket
+
+[Socket]
+ListenDatagram=69
+Accept=no
+
+[Install]
+WantedBy=sockets.target
+

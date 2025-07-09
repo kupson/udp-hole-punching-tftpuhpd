@@ -1,0 +1,33 @@
+[Unit]
+Description=TFTP UDP hole puncher assistant
+After=network.target
+Requires=tftpudpd.socket
+ConditionFileIsExecutable=/usr/local/bin/tftpudpd
+
+[Service]
+ExecStart=/usr/local/bin/tftpudpd
+Restart=on-failure
+DynamicUser=yes
+ProtectHome=yes
+ProtectProc=invisible
+ProcSubset=pid
+ProtectHostname=yes
+ProtectControlGroups=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectClock=yes
+PrivateDevices=yes
+PrivateUsers=yes
+LockPersonality=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+RestrictNamespaces=yes
+RestrictRealtime=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+SystemCallFilter=~memfd_create @privileged @obsolete @cpu-emulation @debug @mount
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
