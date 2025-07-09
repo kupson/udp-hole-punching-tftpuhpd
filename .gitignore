@@ -1,0 +1,10 @@
+# Binaries
+/build/
+
+# IDE/editor files
+.vscode/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
