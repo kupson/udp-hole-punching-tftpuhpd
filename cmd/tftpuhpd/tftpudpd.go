@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/kupson/tftpuhpd/pkg/tftpuhp"
+	"github.com/kupson/udp-hole-punching-tftpuhpd/pkg/tftpuhp"
 )
 
 func main() {
